@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>insta485</title>
+        <style>
+            .homepage {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+<body>
+    <div>
+        <a href="/"> instagram </a>
+        <div class="homepage">
+            {% if session['username'] %}
+            <a href="{{ url_for('explore') }}"> explore </a>
+            <a href="{{ url_for('user', user_url_slug = session.username ) }}"> {{session.username}}  </a>
+            {% else %}
+            <a href="{{ url_for('acc_login') }}"> login </a>
+            {% endif %}
+
+        </div>
+    </div>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
