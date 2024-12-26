@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>insta485</title>
+        <title>SydneyCole</title>
         <style>
             .homepage {
                 position: absolute;
@@ -12,15 +12,9 @@
     </head>
 <body>
     <div>
-        <a href="/"> instagram </a>
+        <a href="/"> Sydney Cole </a>
         <div class="homepage">
-            {% if session['username'] %}
-            <a href="{{ url_for('explore') }}"> explore </a>
-            <a href="{{ url_for('user', user_url_slug = session.username ) }}"> {{session.username}}  </a>
-            {% else %}
-            <a href="{{ url_for('acc_login') }}"> login </a>
-            {% endif %}
-
+            <a href="{{ url_for('explore') }}"> resume </a>
         </div>
     </div>
     <div id="content">{% block content %}{% endblock %}</div>
